@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../services/authService";
+import styles from "../styles/login.module.css"
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -19,9 +20,9 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex justify-center items-center">
-      <div className="flex justify-center items-center">
-        <h1>Please Login</h1>
+    <form onSubmit={handleSubmit} className={styles.container}>
+      <h1>Please Login</h1>
+      <div className={styles.labelcontainer}>
         <label>Email:</label>
         <input
           type="email"
@@ -29,7 +30,7 @@ const LoginForm = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div>
+      <div className={styles.labelcontainer}>
         <label>Password:</label>
         <input
           type="password"

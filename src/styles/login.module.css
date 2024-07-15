@@ -1,0 +1,15 @@
+.container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.labelcontainer {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+}

@@ -6,6 +6,7 @@ import {
   getHistory,
   deleteHistories,
 } from "../services/geoService";
+import styles from "../styles/home.module.css"
 
 const Home = () => {
   const [ip, setIp] = useState("");
@@ -43,21 +44,22 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Home</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles.labelcontainer}>
           <label>IP Address:</label>
           <input
             type="text"
             value={ip}
             onChange={(e) => setIp(e.target.value)}
           />
+          <button type="submit">Get Geo Info</button>
         </div>
-        <button type="submit">Get Geo Info</button>
+        
       </form>
       {geoInfo && (
-        <div>
+        <div >
           <h2>Geo Information</h2>
           <p>{JSON.stringify(geoInfo)}</p>
         </div>
